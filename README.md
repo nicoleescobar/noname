@@ -10,11 +10,13 @@ Usuario:
 -Vista lista de productos
 -Vista detalles de un producto (teléfono plan)
 -Vista Compra
+
 Admins:
 -Login (requerido)
 -Update de Producto
 -Crear Producto
 -Estadísticas de Visitas y Ventas
+
 SuperAdmin:
 -Login (requerido)
 -Lista de Admins
