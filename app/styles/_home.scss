@@ -1,0 +1,231 @@
+.content {
+  height: 100%;
+  background-color: #f8f6f9;
+}
+.open-filters {
+  cursor: pointer;
+}
+
+.filters {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  background-color: rgb(248, 246, 249);
+  border-right: 1px solid #e0e0e0;
+  margin: 0;
+  overflow: hidden;
+
+  &.show {
+    width: auto;
+    height: 100%;
+    padding-bottom: 20px;
+    opacity: 1;
+    overflow: auto;
+  }
+
+  .header i{
+    float: right;
+    margin-top: -42px;
+    cursor: pointer;
+  }
+
+  h5 {
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .cell .body, .plan .body{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    &.show {
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: auto;
+    }
+  }
+
+  .head {
+    padding: 10px 10px;
+    span, i {
+      font-size: 16px;
+    }
+
+    i.arrow {
+      float: right;
+      margin-top: 3px;
+      color: #e91e63;
+      cursor: pointer;
+    }
+  }
+
+  .search {
+    background: white;
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 3px;
+    width: 220px;
+    margin: 0 auto;
+
+    i {
+      display: inline-block;
+      vertical-align: top;
+      margin: 5px 5px 0px 10px;
+      color: rgba(197, 197, 197, 0.85);
+    }
+
+    input {
+      display: inline-block;
+      width: 70%;
+      vertical-align: top;
+      height: 32px;
+      box-sizing: border-box;
+      padding: 2px 7px;
+      margin: 0;
+      border: 0;
+
+      &:focus:not([readonly]) {
+        border: 0;
+        box-shadow: none;
+      }
+    }
+  }
+
+
+
+  .ftitle {
+    display: block;
+    text-align: center;
+    padding: 8px 0;
+    font-weight: 400;
+    color: #8e8d8d;
+  }
+
+  .fbody {
+    min-height: 100px;
+    width: 220px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+
+  .switch {
+    text-align: center;
+
+    label input[type=checkbox]:checked+.lever:after {
+      background-color: #e81e62;
+      left: 24px;
+    }
+
+    label input[type=checkbox]:checked+.lever {
+      background-color: #ff608f;
+    }
+  }
+
+  .marks {
+    padding: 0 20px;
+    p {
+      margin: 0;
+    }
+
+    label {
+      color: #6f6f6f;
+      font-weight: 200;
+    }
+    [type="checkbox"]:checked+label:before {
+      border-right: 2px solid #ea2669;
+      border-bottom: 2px solid #ea2669;
+    }
+  }
+
+  .capacity, .camera, .minutes {
+
+    i, span {
+      display: inline-block;
+      vertical-align: text-top;
+      margin: 5px 1px 10px;
+      color: #909090;
+      font-weight: 300;
+    }
+  }
+
+  .colors {
+    padding: 0 20px;
+    text-align: center;
+
+    .color-box {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+  }
+}
+
+.right-container {
+  display: inline-block;
+  height: 100%;
+  width: 85%;
+  float: right;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.current-content {
+  background-color: white;
+  h3 {
+    color: gray;
+    font-weight: 300;
+    font-size: 24px;
+  }
+}
+
+.cellphones {
+  .card {
+    width: 200px;
+    box-shadow: 1px 3px 8px 1px #cac9c9;
+
+    .card-content {
+      padding: 0px;
+
+      .card-title {
+        display: block;
+        line-height: 32px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        font-size: 16px;
+      }
+    }
+
+    .card-image {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    a {
+      margin-right: 0px !important;
+      background-color: #ea2669 !important;
+      display: block;
+      text-align: center;
+      color: white;
+      padding: 5px;
+
+      &:hover{
+        background-color: #e0638d !important;
+      }
+    }
+  }
+}

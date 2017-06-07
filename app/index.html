@@ -6,6 +6,8 @@
     <title>Alophone</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     {{content-for "head"}}
 
@@ -21,5 +23,21 @@
     <script src="{{rootURL}}assets/alophone.js"></script>
 
     {{content-for "body-footer"}}
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   </body>
+  <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyB0fnjt3NuX_UfQ2APv6Xa5NUEymawOD9E",
+      authDomain: "alophone-17b6a.firebaseapp.com",
+      databaseURL: "https://alophone-17b6a.firebaseio.com",
+      projectId: "alophone-17b6a",
+      storageBucket: "alophone-17b6a.appspot.com",
+      messagingSenderId: "60748135772"
+    };
+    firebase.initializeApp(config);
+    var defaultDatabase = firebase.database();
+  </script>
 </html>

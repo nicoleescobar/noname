@@ -1,0 +1,35 @@
+header {
+  background-color: #0f636f;
+  padding: 0 20px;
+  .row {
+    margin-bottom: 0;
+  }
+  .input-field {
+    margin: 41px 0 11px;
+
+    input {
+      margin-bottom: 0
+    }
+  }
+  .logo {
+    margin: 10px 0 5px;
+    img{
+      background-color: white;
+    }
+  }
+  button {
+    float: right;
+    margin: 20px 0;
+  }
+
+  .user {
+    i {
+      top: 13px;
+      color: #1dbed4;
+
+      &.prefix.active {
+        color: #008da3;
+      }
+    }
+  }
+}

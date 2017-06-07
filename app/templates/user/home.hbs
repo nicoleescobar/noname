@@ -1,0 +1,274 @@
+<div class="content row">
+  <div class="col s2 m2 filters {{if showFilters 'show'}}">
+    <div class="header">
+      <h5> Filtros  </h5>
+      <i class="material-icons" {{action "toggleFilters" 'showFilters'}}>keyboard_arrow_left</i>
+    </div>
+    <div class="cell">
+      <div class="head">
+        <span> Equipos </span>
+        {{#if showCellphones}}
+          <i class="material-icons arrow" {{action "toggleFilters" 'showCellphones'}}>keyboard_arrow_up</i>
+        {{else}}
+          <i class="material-icons arrow" {{action "toggleFilters" 'showCellphones'}}>keyboard_arrow_down</i>
+        {{/if}}
+      </div>
+
+      <div class="body {{if showCellphones 'show'}}">
+        <div class="search">
+          <i class="material-icons">search</i>
+          <input type="text" name="" value="" placeholder="Buscar">
+        </div>
+        <span class="ftitle"> Marca </span>
+        <form class="marks">
+          {{#each marks as |mark|}}
+            <p>
+              <input type="checkbox" id={{mark.indicator}} onchange={{action "filterByMark" mark}}/>
+              <label for={{mark.indicator}}> {{mark.name}} </label>
+            </p>
+          {{/each}}
+        </form>
+
+        <div class="switch">
+          <span class="ftitle"> Disponible en plan </span>
+          <label>
+            Off
+            <input id="showAvailables" type="checkbox" onchange={{action "showAvailablesInPlan"}}>
+            <span class="lever"></span>
+            On
+          </label>
+        </div>
+
+        <span class="ftitle"> Precio </span>
+        <form class="marks">
+          <p>
+            <input name="price" type="radio" id="price1" onchange={{action "filterByPrice" '0' '500,000'}}/>
+            <label for="price1"> Hasta $500.000 </label>
+          </p>
+          <p>
+            <input name="price" type="radio" id="price2" onchange={{action "filterByPrice" '500,000' '1,000,000'}}/>
+            <label for="price2"> $500.000 - $1'000.000 </label>
+          </p>
+          <p>
+            <input name="price" type="radio" id="price3" onchange={{action "filterByPrice" '1,000,000' '2,000,000'}}/>
+            <label for="price3"> $1'000.000 - $2'000.000 </label>
+          </p>
+          <p>
+            <input name="price" type="radio" id="price4" onchange={{action "filterByPrice" '2,000,000'}}/>
+            <label for="price4"> Mas de $2'000.000 </label>
+          </p>
+        </form>
+
+        <span class="ftitle"> Capacidad </span>
+        <form class="marks capacity">
+          <i class="material-icons">sd_storage</i> <span> Memoria Interna </span>
+          <p>
+            <input type="checkbox" id="memory1" />
+            <label for="memory1"> 4GB - 16GB </label>
+          </p>
+          <p>
+            <input type="checkbox" id="memory2" />
+            <label for="memory2"> 16GB - 32GB </label>
+          </p>
+
+          <i class="material-icons">memory</i> <span> RAM </span>
+          <p>
+            <input type="checkbox" id="ram1" />
+            <label for="ram1"> 1GB - 2GB </label>
+          </p>
+          <p>
+            <input type="checkbox" id="ram2" />
+            <label for="ram2"> mas de 2GB </label>
+          </p>
+        </form>
+
+        <div class="colors">
+          <span class="ftitle"> Color </span>
+          {{#each colors as |color|}}
+            <div class="color-box {{color.color}}" style="background-color: {{color.hex}}">
+
+            </div>
+          {{/each}}
+        </div>
+
+        <span class="ftitle"> Camara </span>
+        <div class="camera">
+          <form class="marks camera">
+            <i class="material-icons">camera_front</i> <span> Camara Frontal </span>
+            <p>
+              <input type="checkbox" id="cam1" />
+              <label for="cam1"> Ninguna </label>
+            </p>
+            <p>
+              <input type="checkbox" id="cam2" />
+              <label for="cam2"> 2MP - 5MP </label>
+            </p>
+
+            <p>
+              <input type="checkbox" id="cam3" />
+              <label for="cam3"> Mas de 5MP </label>
+            </p>
+
+            <i class="material-icons">camera_alt</i> <span> Camara Trasera </span>
+            <p>
+              <input type="checkbox" id="cam4" />
+              <label for="cam4"> 2MP - 5MP </label>
+            </p>
+            <p>
+              <input type="checkbox" id="cam5" />
+              <label for="cam5"> 5MP - 8MP </label>
+            </p>
+
+            <p>
+              <input type="checkbox" id="cam6" />
+              <label for="cam6"> 8MP - 13MP </label>
+            </p>
+
+            <p>
+              <input type="checkbox" id="cam7" />
+              <label for="cam7"> Mas de 13MP </label>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="plan">
+      <div class="head">
+        <span> Planes Moviles </span>
+        {{#if showPlanFilters}}
+          <i class="material-icons arrow" {{action "toggleFilters" 'showPlanFilters'}}>keyboard_arrow_up</i>
+        {{else}}
+          <i class="material-icons arrow" {{action "toggleFilters" 'showPlanFilters'}}>keyboard_arrow_down</i>
+        {{/if}}
+      </div>
+
+      <div class="body {{if showPlanFilters 'show'}}">
+        <span class="ftitle"> Cargo Basico </span>
+        <form class="marks">
+          <p>
+            <input type="checkbox" id="cargo1" />
+            <label for="cargo1"> menos de  $50.000 </label>
+          </p>
+
+          <p>
+            <input type="checkbox" id="cargo2" />
+            <label for="cargo2"> $50.000 - $100.000 </label>
+          </p>
+
+          <p>
+            <input type="checkbox" id="cargo3" />
+            <label for="cargo3"> Mas de $100.000</label>
+          </p>
+        </form>
+
+        <span class="ftitle"> Navegacion </span>
+        <form class="marks">
+          <p>
+            <input type="checkbox" id="nav1" />
+            <label for="nav1"> menos de  3GB </label>
+          </p>
+
+          <p>
+            <input type="checkbox" id="nav2" />
+            <label for="nav2"> 3GB - 9GB </label>
+          </p>
+
+          <p>
+            <input type="checkbox" id="nav3" />
+            <label for="nav3"> Mas de 9GB</label>
+          </p>
+        </form>
+
+        <span class="ftitle"> Minutos </span>
+        <form class="marks minutes">
+          <i class="material-icons">phone</i> <span> Mismo Operador </span>
+          <p>
+            <input type="checkbox" id="min1" />
+            <label for="min1"> menos de 300 </label>
+          </p>
+
+          <p>
+            <input type="checkbox" id="min2" />
+            <label for="min2"> 300 - 500 </label>
+          </p>
+
+          <p>
+            <input type="checkbox" id="cargo3" />
+            <label for="cargo3"> Ilimitados </label>
+          </p>
+
+          <i class="material-icons">public</i> <span> Todo Operador </span>
+          <p>
+            <input type="checkbox" id="mintd1" />
+            <label for="mintd1"> menos de 300 </label>
+          </p>
+
+          <p>
+            <input type="checkbox" id="mintd2" />
+            <label for="mintd2"> 300 - 500 </label>
+          </p>
+
+          <p>
+            <input type="checkbox" id="cargotd3" />
+            <label for="cargotd3"> Ilimitados </label>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+  {{#unless showFilters}}
+    <div class="open-filters" {{action "toggleFilters" 'showFilters'}}>
+      <i class="material-icons">keyboard_arrow_right</i>
+    </div>
+  {{/unless}}
+
+  <div class="current-content col s7 m10">
+    <div class="cellphones row">
+      <h3> Celulares </h3>
+       {{#each cellphones as |cellphone|}}
+        <div class="col s12 m3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src={{cellphone.image}}>
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">{{cellphone.name}}<i class="material-icons right">more_vert</i></span>
+              <p><a href="#">Ver</a></p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">{{cellphone.name}}<i class="material-icons right">close</i></span>
+              <p>{{cellphone.descp}}</p>
+              <ul>
+                {{#each cellphone.details as |detail|}}
+                  <li> {{detail.key}} : {{detail.value}} </li>
+                  {{cellphone.price}}
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+    <div class="planes row">
+      <h3> Planes </h3>
+      {{#each plans as |plan|}}
+       <div class="col s12 m3">
+         <div class="card cyan darken-3">
+           <div class="card-content white-text">
+            <span class="card-title"> Tu Plan </span>
+            <p>{{plan.descp}}</p>
+            <span> <strong>Beneficios: </strong> {{plan.benefits}} </span> <br>
+            <span> <strong>Navegacion: </strong> {{plan.navigation}} </span> <br>
+            <span> <strong>Minutos Todo Operador: </strong> {{plan.minutes.allOp}} </span> <br>
+           </div>
+           <div class="card-action">
+             <a>{{plan.basic}}$</a>
+             <a href="#">Ver</a>
+           </div>
+          </div>
+       </div>
+     {{/each}}
+    </div>
+  </div>
+</div>
